@@ -11,6 +11,10 @@
 		ED7BEF822785BA000054190C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF812785BA000054190C /* HomeView.swift */; };
 		ED7BEF842785BA010054190C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BEF832785BA010054190C /* Assets.xcassets */; };
 		ED7BEF872785BA010054190C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BEF862785BA010054190C /* Preview Assets.xcassets */; };
+		ED7BEF942785C1580054190C /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = ED7BEF922785C1580054190C /* data.json */; };
+		ED7BEF952785C1580054190C /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = ED7BEF932785C1580054190C /* style.html */; };
+		ED7BEF972785DCCF0054190C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF962785DCCF0054190C /* Models.swift */; };
+		ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF982785E46B0054190C /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		ED7BEF812785BA000054190C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ED7BEF832785BA010054190C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED7BEF862785BA010054190C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED7BEF922785C1580054190C /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		ED7BEF932785C1580054190C /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
+		ED7BEF962785DCCF0054190C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		ED7BEF982785E46B0054190C /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 				ED7BEF8E2785BCDA0054190C /* Views */,
 				ED7BEF8F2785BCF70054190C /* ViewModels */,
 				ED7BEF902785BD0D0054190C /* Models */,
+				ED7BEF912785C0FA0054190C /* Data */,
 				ED7BEF832785BA010054190C /* Assets.xcassets */,
 				ED7BEF852785BA010054190C /* Preview Content */,
 			);
@@ -88,6 +97,7 @@
 		ED7BEF8F2785BCF70054190C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				ED7BEF982785E46B0054190C /* ContentModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -95,8 +105,18 @@
 		ED7BEF902785BD0D0054190C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED7BEF962785DCCF0054190C /* Models.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ED7BEF912785C0FA0054190C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BEF922785C1580054190C /* data.json */,
+				ED7BEF932785C1580054190C /* style.html */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +178,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7BEF872785BA010054190C /* Preview Assets.xcassets in Resources */,
+				ED7BEF942785C1580054190C /* data.json in Resources */,
+				ED7BEF952785C1580054190C /* style.html in Resources */,
 				ED7BEF842785BA010054190C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7BEF972785DCCF0054190C /* Models.swift in Sources */,
+				ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */,
 				ED7BEF822785BA000054190C /* HomeView.swift in Sources */,
 				ED7BEF802785BA000054190C /* LearningApp.swift in Sources */,
 			);
