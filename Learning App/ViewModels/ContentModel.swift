@@ -9,7 +9,12 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
-    @Published var modules = [Module]
+    @Published var modules = [Module]()
     
+    var styleData: Data?
     
+    init() {
+        self.modules = LocalDataService.getLocalData()
+        self.styleData = LocalStyleDataService.getLocalStyleData()
+    }
 }
