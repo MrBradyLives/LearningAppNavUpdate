@@ -82,7 +82,7 @@
         },
         "test": {
             "id": 0,
-            "image": "testSwift",
+            "image": "swift",
             "time": "30 minutes",
             "description": "Gear up and put your Swift knowledge to the test.",
             "questions": [
