@@ -19,7 +19,7 @@ struct ContentListView: View {
                 ForEach(model.modules[moduleId].content.lessons) { lesson in
                     
                     NavigationLink(tag: lesson.id, selection: $selecton) {
-                        Text("Lesson \(lesson.id+1)")
+                        ContentDetailView(moduleId: moduleId, lessonNumber: lesson.id, selection: $selecton)
                     } label: {
                         ContentListCardView(lessonNumber: lesson.id+1, lessonTitle: lesson.title, lessonDuration: lesson.duration)
                     }
