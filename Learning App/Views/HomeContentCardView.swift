@@ -1,5 +1,5 @@
 //
-//  QuizCardView.swift
+//  HomeContentCardView.swift
 //  Learning App
 //
 //  Created by Cole Edward Dano on 6.1.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuizCardView: View {
+struct HomeContentCardView: View {
     
     var image: String
     var category: String
@@ -25,22 +25,15 @@ struct QuizCardView: View {
                 .aspectRatio(CGSize(width: 2.15, height: 1), contentMode: .fit)
             
             HStack {
-                ZStack {
-                    Image(image)
-                        .resizable()
-                        .clipShape(Circle())
-                        .colorInvert()
-                    Image(systemName: "questionmark.circle")
-                        .resizable()
-                        .foregroundColor(Color(.sRGB, red: 1, green: 1, blue: 1, opacity: 0.8))
-                        .padding(10)
-                }
-                .frame(width: 116, height: 116, alignment: .center)
+                Image(image)
+                    .resizable()
+                    .frame(width: 116, height: 116, alignment: .center)
+                    .clipShape(Circle())
                 
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Let's take a \(category) test!")
+                    Text("Let's Learn \(category)")
                         .font(.title2)
                         .fontWeight(.bold)
                     Text(description)
@@ -49,7 +42,7 @@ struct QuizCardView: View {
                     
                     HStack {
                         Image(systemName: "chart.bar.doc.horizontal.fill")
-                        Text("\(contentNumber) Questions")
+                        Text("\(contentNumber) Lessons")
                             .font(.footnote)
                         Spacer()
                         Image(systemName: "clock.fill")
@@ -65,8 +58,8 @@ struct QuizCardView: View {
     }
 }
 
-struct QuizCardView_Previews: PreviewProvider {
+struct HomeContentCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizCardView(image: "swift", category: "Swift", description: "Gear up and put your Swift knowledge to the test.", contentNumber: 10, time: "30 minutes")
+        HomeContentCardView(image: "swift", category: "Swift", description: "Understand the fundamentals of the Swift programming language.", contentNumber: 10, time: "3 hours")
     }
 }

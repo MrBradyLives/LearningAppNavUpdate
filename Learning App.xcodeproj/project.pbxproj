@@ -17,8 +17,9 @@
 		ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF982785E46B0054190C /* ContentModel.swift */; };
 		ED7BEF9C2785E7270054190C /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF9B2785E7270054190C /* LocalDataService.swift */; };
 		ED7BEF9E2786373C0054190C /* LocalStyleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF9D2786373C0054190C /* LocalStyleDataService.swift */; };
-		EDC9B66927872B87003EDA82 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66827872B87003EDA82 /* ContentCardView.swift */; };
-		EDC9B66B27873F61003EDA82 /* QuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66A27873F61003EDA82 /* QuizCardView.swift */; };
+		EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */; };
+		EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */; };
+		EDFCAED2278D703700BC3686 /* LessonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED1278D703700BC3686 /* LessonListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,9 @@
 		ED7BEF982785E46B0054190C /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		ED7BEF9B2785E7270054190C /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		ED7BEF9D2786373C0054190C /* LocalStyleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStyleDataService.swift; sourceTree = "<group>"; };
-		EDC9B66827872B87003EDA82 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
-		EDC9B66A27873F61003EDA82 /* QuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCardView.swift; sourceTree = "<group>"; };
+		EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentCardView.swift; sourceTree = "<group>"; };
+		EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizCardView.swift; sourceTree = "<group>"; };
+		EDFCAED1278D703700BC3686 /* LessonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				ED7BEF812785BA000054190C /* HomeView.swift */,
-				EDC9B66827872B87003EDA82 /* ContentCardView.swift */,
-				EDC9B66A27873F61003EDA82 /* QuizCardView.swift */,
+				EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */,
+				EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */,
+				EDFCAED1278D703700BC3686 /* LessonListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,10 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC9B66927872B87003EDA82 /* ContentCardView.swift in Sources */,
+				EDFCAED2278D703700BC3686 /* LessonListView.swift in Sources */,
+				EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */,
 				ED7BEF972785DCCF0054190C /* Models.swift in Sources */,
 				ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */,
-				EDC9B66B27873F61003EDA82 /* QuizCardView.swift in Sources */,
+				EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */,
 				ED7BEF9C2785E7270054190C /* LocalDataService.swift in Sources */,
 				ED7BEF9E2786373C0054190C /* LocalStyleDataService.swift in Sources */,
 				ED7BEF822785BA000054190C /* HomeView.swift in Sources */,

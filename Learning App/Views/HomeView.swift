@@ -13,23 +13,24 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             
-            VStack {
+            VStack(alignment: .leading) {
+                Text("What should we learn about today?")
+                    .padding(.leading)
                 
                 ScrollView {
                     
                     LazyVStack {
                         ForEach(model.modules) { module in
                             // MARK: Content Card
-                            ContentCardView(image: module.content.image, category: module.category, description: module.content.description, contentNumber: module.content.lessons.count, time: module.content.time)
+                            HomeContentCardView(image: module.content.image, category: module.category, description: module.content.description, contentNumber: module.content.lessons.count, time: module.content.time)
                             
                             // MARK: Quiz Card
-                            QuizCardView(image: module.test.image, category: module.category, description: module.test.description, contentNumber: module.test.questions.count, time: module.test.time)
+                            HomeQuizCardView(image: module.test.image, category: module.category, description: module.test.description, contentNumber: module.test.questions.count, time: module.test.time)
                         }
                     }
-                    
-                    
                 }
             }
+            .navigationTitle("Let's Learn!")
         }
     }
 }
