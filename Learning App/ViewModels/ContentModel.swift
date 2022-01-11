@@ -9,6 +9,7 @@ import Foundation
 
 class ContentModel: ObservableObject {
     
+    @Published var moduleSelector: String? = nil
     @Published var modules = [Module]()
     
     var styleData: Data?

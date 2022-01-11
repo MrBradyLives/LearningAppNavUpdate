@@ -21,13 +21,19 @@ struct HomeView: View {
                     
                     LazyVStack {
                         ForEach(model.modules) { module in
+                            
                             // MARK: Content Card
-                            HomeContentCardView(image: module.content.image, category: module.category, description: module.content.description, contentNumber: module.content.lessons.count, time: module.content.time)
+                            NavigationLink(tag: "Lesson \(module.id)", selection: $model.moduleSelector) {
+                                ContentListView(moduleId: module.id)
+                            } label: {
+                                HomeContentCardView(image: module.content.image, category: module.category, description: module.content.description, contentNumber: module.content.lessons.count, time: module.content.time)
+                            }
                             
                             // MARK: Quiz Card
                             HomeQuizCardView(image: module.test.image, category: module.category, description: module.test.description, contentNumber: module.test.questions.count, time: module.test.time)
                         }
                     }
+                    .foregroundColor(.black)
                 }
             }
             .navigationTitle("Let's Learn!")
