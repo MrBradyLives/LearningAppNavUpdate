@@ -18,8 +18,8 @@ struct ContentListView: View {
             LazyVStack {
                 ForEach(model.modules[moduleId].content.lessons) { lesson in
                     
-                    NavigationLink(tag: lesson.id, selection: $selecton) {
-                        ContentDetailView(moduleId: moduleId, lessonNumber: lesson.id, selection: $selecton)
+                    NavigationLink(tag: lesson.id+1, selection: $selecton) {
+                        ContentDetailView(moduleId: moduleId, lessonId: lesson.id, selection: $selecton)
                     } label: {
                         ContentListCardView(lessonNumber: lesson.id+1, lessonTitle: lesson.title, lessonDuration: lesson.duration)
                     }

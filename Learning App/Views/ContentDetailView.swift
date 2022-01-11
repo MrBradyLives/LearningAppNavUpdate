@@ -12,34 +12,38 @@ struct ContentDetailView: View {
     
     @EnvironmentObject var model: ContentModel
     var moduleId: Int
-    var lessonNumber: Int
+    var lessonId: Int
     @Binding var selection: Int?
     
     var body: some View {
         
-        let url = URL(string: String(Constants.videoHostUrl + model.modules[moduleId].content.lessons[lessonNumber].video))
+
+            let url = URL(string: String(Constants.videoHostUrl + model.modules[moduleId].content.lessons[lessonId].video))
+
+
         VStack {
-            Text("Lesson \(lessonNumber+1)")
+            Text("Lesson \(lessonId+1) - \(model.modules[moduleId].content.lessons[lessonId].title)")
+
             if url != nil {
                 VideoPlayer(player: AVPlayer(url: url!))
                     .cornerRadius(20)
             }
             
             // TODO: add descrition text
-            
+           
             Button {
-                if lessonNumber == model.modules[moduleId].content.lessons.count {
-                    selection = nil
+                if selection == model.modules[moduleId].content.lessons.count {
+                    model.moduleSelector = nil
                 }
-                else if selection != nil {
+                else {
                     selection! += 1
                 }
             } label: {
-                if lessonNumber == model.modules[moduleId].content.lessons.count {
+                if selection == model.modules[moduleId].content.lessons.count {
                     Text("Complete")
                 }
-                else if selection != nil {
-                    Text("")
+                else {
+                    Text("Next - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
                 }
             }
         }
@@ -48,7 +52,7 @@ struct ContentDetailView: View {
 
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentDetailView(moduleId: 0, lessonNumber: 0, selection: .constant(0))
+        ContentDetailView(moduleId: 0, lessonId: 0, selection: .constant(0))
             .environmentObject(ContentModel())
     }
 }
