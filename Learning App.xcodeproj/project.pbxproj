@@ -17,11 +17,11 @@
 		ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF982785E46B0054190C /* ContentModel.swift */; };
 		ED7BEF9C2785E7270054190C /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF9B2785E7270054190C /* LocalDataService.swift */; };
 		ED7BEF9E2786373C0054190C /* LocalStyleDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF9D2786373C0054190C /* LocalStyleDataService.swift */; };
+		EDAE7752278EE73100AF5B3B /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE7751278EE73100AF5B3B /* ContentDetailView.swift */; };
 		EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */; };
 		EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */; };
 		EDFCAED2278D703700BC3686 /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED1278D703700BC3686 /* ContentListView.swift */; };
 		EDFCAED4278D7DA000BC3686 /* ContentListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */; };
-		EDFCAED6278DAFB700BC3686 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED5278DAFB700BC3686 /* ContentDetailView.swift */; };
 		EDFCAED8278DC60200BC3686 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED7278DC60200BC3686 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,11 +37,11 @@
 		ED7BEF982785E46B0054190C /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		ED7BEF9B2785E7270054190C /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		ED7BEF9D2786373C0054190C /* LocalStyleDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStyleDataService.swift; sourceTree = "<group>"; };
+		EDAE7751278EE73100AF5B3B /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentCardView.swift; sourceTree = "<group>"; };
 		EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizCardView.swift; sourceTree = "<group>"; };
 		EDFCAED1278D703700BC3686 /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
 		EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListCardView.swift; sourceTree = "<group>"; };
-		EDFCAED5278DAFB700BC3686 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		EDFCAED7278DC60200BC3686 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 				EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */,
 				EDFCAED1278D703700BC3686 /* ContentListView.swift */,
 				EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */,
-				EDFCAED5278DAFB700BC3686 /* ContentDetailView.swift */,
+				EDAE7751278EE73100AF5B3B /* ContentDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,10 +227,10 @@
 				EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */,
 				ED7BEF972785DCCF0054190C /* Models.swift in Sources */,
 				ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */,
-				EDFCAED6278DAFB700BC3686 /* ContentDetailView.swift in Sources */,
 				EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */,
 				EDFCAED4278D7DA000BC3686 /* ContentListCardView.swift in Sources */,
 				ED7BEF9C2785E7270054190C /* LocalDataService.swift in Sources */,
+				EDAE7752278EE73100AF5B3B /* ContentDetailView.swift in Sources */,
 				ED7BEF9E2786373C0054190C /* LocalStyleDataService.swift in Sources */,
 				ED7BEF822785BA000054190C /* HomeView.swift in Sources */,
 				ED7BEF802785BA000054190C /* LearningApp.swift in Sources */,

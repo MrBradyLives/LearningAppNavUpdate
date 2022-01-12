@@ -2,49 +2,43 @@
 //  ContentDetailView.swift
 //  Learning App
 //
-//  Created by Cole Edward Dano on 11.1.2022.
+//  Created by Cole Edward Dano on 12.1.2022.
 //
 
 import SwiftUI
-import AVKit
 
 struct ContentDetailView: View {
-    
     @EnvironmentObject var model: ContentModel
     var moduleId: Int
     var lessonId: Int
-    @Binding var selection: Int?
+    @Binding var selection:Int?
     
     var body: some View {
-        
-
-            let url = URL(string: String(Constants.videoHostUrl + model.modules[moduleId].content.lessons[lessonId].video))
-
-
+        // Note: Do not use a LazyVStack, as lower elemments won't render and cause the tagging not to work.
         VStack {
-            Text("Lesson \(lessonId+1) - \(model.modules[moduleId].content.lessons[lessonId].title)")
-
-            if url != nil {
-                VideoPlayer(player: AVPlayer(url: url!))
-                    .cornerRadius(20)
-            }
+            Text("Hello this is lesson \(lessonId + 1)")
+            Text("Lesson Title: \(model.modules[moduleId].content.lessons[lessonId].title)")
+            Text("Lesson ID: \(lessonId)")
+            Text("Selection: \(selection!)")
+            Text("model.modules[moduleId].content.lessons.count-1 \(model.modules[moduleId].content.lessons.count-1)")
             
-            // TODO: add descrition text
-           
+            
             Button {
-                if selection == model.modules[moduleId].content.lessons.count {
+                if selection == model.modules[moduleId].content.lessons.count-1 {
                     model.moduleSelector = nil
                 }
                 else {
                     selection! += 1
                 }
             } label: {
-                if selection == model.modules[moduleId].content.lessons.count {
-                    Text("Complete")
+                if selection == model.modules[moduleId].content.lessons.count-1 {
+                    Text("Complete - Return Home")
                 }
                 else {
-                    Text("Next - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
+                    Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
                 }
+
+                
             }
         }
     }
@@ -52,7 +46,7 @@ struct ContentDetailView: View {
 
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentDetailView(moduleId: 0, lessonId: 0, selection: .constant(0))
+        ContentDetailView(moduleId: 0, lessonId: 0, selection: .constant(1))
             .environmentObject(ContentModel())
     }
 }

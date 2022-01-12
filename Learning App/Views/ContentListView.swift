@@ -10,18 +10,18 @@ import SwiftUI
 struct ContentListView: View {
     
     @EnvironmentObject var model: ContentModel
-    @State var selecton:Int? = nil
+    @State var selection:Int?
     var moduleId: Int
     
     var body: some View {
         ScrollView {
-            LazyVStack {
+            VStack {
                 ForEach(model.modules[moduleId].content.lessons) { lesson in
                     
-                    NavigationLink(tag: lesson.id+1, selection: $selecton) {
-                        ContentDetailView(moduleId: moduleId, lessonId: lesson.id, selection: $selecton)
+                    NavigationLink(tag: lesson.id, selection: $selection) {
+                        ContentDetailView(moduleId: moduleId, lessonId: lesson.id, selection: $selection)
                     } label: {
-                        ContentListCardView(lessonNumber: lesson.id+1, lessonTitle: lesson.title, lessonDuration: lesson.duration)
+                        ContentListCardView(lessonNumber: lesson.id, lessonTitle: lesson.title, lessonDuration: lesson.duration)
                     }
                 }
             }
