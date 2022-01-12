@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentDetailView: View {
     @EnvironmentObject var model: ContentModel
@@ -14,10 +15,19 @@ struct ContentDetailView: View {
     @Binding var selection:Int?
     
     var body: some View {
-        // Note: Do not use a LazyVStack, as lower elemments won't render and cause the tagging not to work.
+        
+        let url = URL(string: Constants.videoHostUrl + model.modules[moduleId].content.lessons[lessonId].video)
+        
+
+
         VStack {
             Text("Hello this is lesson \(lessonId + 1)")
             Text("Lesson Title: \(model.modules[moduleId].content.lessons[lessonId].title)")
+            
+            if url != nil {
+                VideoPlayer(player: AVPlayer(url: url!))
+                    .cornerRadius(20)
+            }
             
             Button {
                 if selection == model.modules[moduleId].content.lessons.count-1 {
