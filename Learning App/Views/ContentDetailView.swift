@@ -39,20 +39,21 @@ struct ContentDetailView: View {
             } label: {
                 if selection == model.modules[moduleId].content.lessons.count-1 {
                     ZStack {
-                        RectangleView(color: .red, width: 350, height: 50)
+                        RectangleView(color: .red, height: 50)
                         Text("Complete - Return Home")
                             .foregroundColor(.white)
                     }
                 }
                 else {
                     ZStack {
-                        RectangleView(color: .green, width: 350, height: 50)
+                        RectangleView(color: .green, height: 50)
                         Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
                             .foregroundColor(.white)
                     }
                 }
             }
         }
+        .padding()
     }
 }
 

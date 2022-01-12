@@ -10,7 +10,6 @@ import SwiftUI
 struct RectangleView: View {
     
     var color: Color
-    var width: CGFloat
     var height: CGFloat
     
     var body: some View {
@@ -18,12 +17,12 @@ struct RectangleView: View {
             .foregroundColor(color)
             .cornerRadius(15)
             .shadow(color: .gray, radius: 5, x: 5, y: 5)
-            .frame(width: width, height: height)
+            .frame(height: height)
     }
 }
 
 struct RectangleView_Previews: PreviewProvider {
     static var previews: some View {
-        RectangleView(color: .white, width: 400, height: 80)
+        RectangleView(color: .white, height: 80)
     }
 }
