@@ -18,10 +18,6 @@ struct ContentDetailView: View {
         VStack {
             Text("Hello this is lesson \(lessonId + 1)")
             Text("Lesson Title: \(model.modules[moduleId].content.lessons[lessonId].title)")
-            Text("Lesson ID: \(lessonId)")
-            Text("Selection: \(selection!)")
-            Text("model.modules[moduleId].content.lessons.count-1 \(model.modules[moduleId].content.lessons.count-1)")
-            
             
             Button {
                 if selection == model.modules[moduleId].content.lessons.count-1 {
@@ -37,8 +33,6 @@ struct ContentDetailView: View {
                 else {
                     Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
                 }
-
-                
             }
         }
     }
@@ -46,7 +40,7 @@ struct ContentDetailView: View {
 
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentDetailView(moduleId: 0, lessonId: 0, selection: .constant(1))
+        ContentDetailView(moduleId: 0, lessonId: 0, selection: .constant(0))
             .environmentObject(ContentModel())
     }
 }
