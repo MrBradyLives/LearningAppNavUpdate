@@ -38,10 +38,18 @@ struct ContentDetailView: View {
                 }
             } label: {
                 if selection == model.modules[moduleId].content.lessons.count-1 {
-                    Text("Complete - Return Home")
+                    ZStack {
+                        RectangleView(color: .red, width: 350, height: 50)
+                        Text("Complete - Return Home")
+                            .foregroundColor(.white)
+                    }
                 }
                 else {
-                    Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
+                    ZStack {
+                        RectangleView(color: .green, width: 350, height: 50)
+                        Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
+                            .foregroundColor(.white)
+                    }
                 }
             }
         }
