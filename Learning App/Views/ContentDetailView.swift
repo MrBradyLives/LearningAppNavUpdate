@@ -14,11 +14,13 @@ struct ContentDetailView: View {
     var lessonId: Int
     @Binding var selection:Int?
     
+
+    
     var body: some View {
         
         let url = URL(string: Constants.videoHostUrl + model.modules[moduleId].content.lessons[lessonId].video)
         
-
+        let htmlTextString =  model.addCodeStyling(model.modules[moduleId].content.lessons[lessonId].explanation)
 
         VStack {
             Text("Hello this is lesson \(lessonId + 1)")
@@ -29,15 +31,21 @@ struct ContentDetailView: View {
                     .cornerRadius(20)
             }
             
+            CodeTextView(htmlTextStringToInsert: htmlTextString)
+            
             Button {
-                if selection == model.modules[moduleId].content.lessons.count-1 {
+                if selection == nil {
+                    selection = lessonId
+                }
+                
+                if lessonId == model.modules[moduleId].content.lessons.count-1 {
                     model.moduleSelector = nil
                 }
                 else {
                     selection! += 1
                 }
             } label: {
-                if selection == model.modules[moduleId].content.lessons.count-1 {
+                if lessonId == model.modules[moduleId].content.lessons.count-1 {
                     ZStack {
                         RectangleView(color: .red, height: 50)
                         Text("Complete - Return Home")
