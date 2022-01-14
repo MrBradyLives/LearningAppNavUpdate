@@ -23,6 +23,7 @@
 		EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */; };
 		EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */; };
 		EDCD392A27915EB100280EE4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD392927915EB100280EE4 /* QuizView.swift */; };
+		EDCD392C2791A30400280EE4 /* QuizResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD392B2791A30400280EE4 /* QuizResultsView.swift */; };
 		EDFCAED2278D703700BC3686 /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED1278D703700BC3686 /* ContentListView.swift */; };
 		EDFCAED4278D7DA000BC3686 /* ContentListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */; };
 		EDFCAED8278DC60200BC3686 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFCAED7278DC60200BC3686 /* Constants.swift */; };
@@ -46,6 +47,7 @@
 		EDC9B66827872B87003EDA82 /* HomeContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentCardView.swift; sourceTree = "<group>"; };
 		EDC9B66A27873F61003EDA82 /* HomeQuizCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizCardView.swift; sourceTree = "<group>"; };
 		EDCD392927915EB100280EE4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		EDCD392B2791A30400280EE4 /* QuizResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultsView.swift; sourceTree = "<group>"; };
 		EDFCAED1278D703700BC3686 /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
 		EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListCardView.swift; sourceTree = "<group>"; };
 		EDFCAED7278DC60200BC3686 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				EDFCAED3278D7DA000BC3686 /* ContentListCardView.swift */,
 				EDAE7751278EE73100AF5B3B /* ContentDetailView.swift */,
 				EDCD392927915EB100280EE4 /* QuizView.swift */,
+				EDCD392B2791A30400280EE4 /* QuizResultsView.swift */,
 				ED50A449278F6E6B0098ECC9 /* RectangleView.swift */,
 				EDAADB202790441F003B8692 /* UIKit */,
 			);
@@ -246,6 +249,7 @@
 				EDAADB22279044D3003B8692 /* CodeTextView.swift in Sources */,
 				EDC9B66927872B87003EDA82 /* HomeContentCardView.swift in Sources */,
 				ED7BEF972785DCCF0054190C /* Models.swift in Sources */,
+				EDCD392C2791A30400280EE4 /* QuizResultsView.swift in Sources */,
 				ED7BEF992785E46B0054190C /* ContentModel.swift in Sources */,
 				EDC9B66B27873F61003EDA82 /* HomeQuizCardView.swift in Sources */,
 				EDFCAED4278D7DA000BC3686 /* ContentListCardView.swift in Sources */,

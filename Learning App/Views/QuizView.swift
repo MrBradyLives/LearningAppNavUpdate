@@ -27,6 +27,20 @@ struct QuizView: View {
             
             CodeTextView(htmlTextStringToInsert: htmlString)
             
+            ForEach(model.modules[moduleId].test.questions[questionId].answers, id: \.self) { answer in
+                Button {
+                    
+                } label: {
+                    ZStack {
+                        RectangleView(color: .blue, height: 60)
+                        Text(answer)
+                            .foregroundColor(.white)
+                    }
+                }
+            }
+            
+            Spacer()
+            
             Button {
                 if questionId == model.modules[moduleId].test.questions.count-1 {
                     model.moduleSelector = nil
@@ -50,6 +64,7 @@ struct QuizView: View {
                     }
                 }
             }
+            .padding(.top, 80)
         }
         .padding()
     }
