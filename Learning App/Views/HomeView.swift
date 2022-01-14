@@ -30,7 +30,11 @@ struct HomeView: View {
                             }
                             
                             // MARK: Quiz Card
-                            HomeQuizCardView(image: module.test.image, category: module.category, description: module.test.description, contentNumber: module.test.questions.count, time: module.test.time)
+                            NavigationLink(tag: "Quiz \(module.id)", selection: $model.moduleSelector) {
+                                QuizView(moduleId: module.id)
+                            } label: {
+                                HomeQuizCardView(image: module.test.image, category: module.category, description: module.test.description, contentNumber: module.test.questions.count, time: module.test.time)
+                            }
                         }
                     }
                     .foregroundColor(.black)
