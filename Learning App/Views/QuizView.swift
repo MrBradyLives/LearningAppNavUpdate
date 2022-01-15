@@ -16,6 +16,7 @@ struct QuizView: View {
     @State var answerIsSubmitted = false
     @State var selectedAnswerIndex: Int? = nil
     @State var showResuts = false
+    @State var correctAnswers = 0
     
     var body: some View {
         
@@ -26,11 +27,10 @@ struct QuizView: View {
             VStack {
                 Text("Question: \(questionId+1)")
                     .font(.largeTitle)
-                    .padding()
-                Text("Question ID: \(questionId)")
-                Text("Count-1: \(model.modules[moduleId].test.questions.count-1)")
+                    .padding(.bottom)
                 
                 CodeTextView(htmlTextStringToInsert: htmlString)
+                    .frame(height: 200)
                 
                 //Mark: Answers Stack
                 ScrollView {
@@ -49,6 +49,7 @@ struct QuizView: View {
                                             .foregroundColor(index == selectedAnswerIndex ? .white : .black)
                                     }
                                 }
+                                // Button green if correct red if incorrect plus green for correct
                                 else {
                                     if currentQueston.answers[index] == currentQueston.answers[currentQueston.correctIndex]  {
                                         ZStack {
@@ -73,49 +74,34 @@ struct QuizView: View {
                                     }
                                 }
                             }
-                            
-                            
-                            
-                            //                            if selectedAnswerIndex == model.modules[moduleId].test.questions[questionId].correctIndex {
-                            //                                ZStack {
-                            //                                    RectangleView(color: .green, height: 60)
-                            //                                    Text(model.modules[moduleId].test.questions[questionId].answers[index])
-                            //                                        .foregroundColor(.white)
-                            //                                }
-                            //                            }
-                            //                            else if {
-                            //                                ZStack {
-                            //                                    RectangleView(color: .red, height: 60)
-                            //                                    Text(model.modules[moduleId].test.questions[questionId].answers[index])
-                            //                                        .foregroundColor(.black)
-                            //                                }
-                            //                            }
-                            //                            else {
-                            //                                ZStack {
-                            //                                    RectangleView(color: .white, height: 60)
-                            //                                    Text(model.modules[moduleId].test.questions[questionId].answers[index])
-                            //                                        .foregroundColor(.black)
-                            //                                }
-                            //                            }
+                            .disabled(answerIsSubmitted)
                         }
                     }
                 }
+                // TODO: Add score counting
                 
                 // Mark: Submit / Next Question / To Results Button
                 Button {
+                    if !answerIsSubmitted {
+                        answerIsSubmitted = true
+                    }
                     
-                    answerIsSubmitted = true
-                    
-                    //                    if !answerIsSubmitted {
-                    //
-                    //                    }
-                    //
-                    //                    else if questionId == model.modules[moduleId].test.questions.count-1 {
-                    //                        resultsSelector = 1
-                    //                    }
-                    //                    else {
-                    //                        questionId += 1
-                    //                    }
+                    // TODO: check - do I need both selectors????
+                    else if questionId == model.modules[moduleId].test.questions.count-1 {
+                        if selectedAnswerIndex == model.modules[moduleId].test.questions[questionId].correctIndex {
+                            correctAnswers += 1
+                        }
+                        resultsSelector = 1
+                        showResuts = true
+                    }
+                    else {
+                        if selectedAnswerIndex == model.modules[moduleId].test.questions[questionId].correctIndex {
+                            correctAnswers += 1
+                        }
+                        answerIsSubmitted = false
+                        selectedAnswerIndex = nil
+                        questionId += 1
+                    }
                 } label: {
                     if !answerIsSubmitted {
                         ZStack {
@@ -124,7 +110,7 @@ struct QuizView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    else if questionId >= model.modules[moduleId].test.questions.count-2 {
+                    else if questionId >= model.modules[moduleId].test.questions.count-1 {
                         ZStack {
                             RectangleView(color: .red, height: 50)
                             Text("Complete - Show Results")
@@ -139,12 +125,13 @@ struct QuizView: View {
                         }
                     }
                 }
+                .disabled(selectedAnswerIndex == nil)
                 .padding(.top, 80)
             }
             .padding()
         }
         else if showResuts == true {
-            QuizResultsView(numCorrect: 10, numQuestions: 10)
+            QuizResultsView(numCorrect: correctAnswers, numQuestions: model.modules[moduleId].test.questions.count)
         }
         else {
             ProgressView()
