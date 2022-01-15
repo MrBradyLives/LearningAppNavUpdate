@@ -23,8 +23,7 @@ struct ContentDetailView: View {
         let htmlTextString =  model.addCodeStyling(model.modules[moduleId].content.lessons[lessonId].explanation)
 
         VStack {
-            Text("Hello this is lesson \(lessonId + 1)")
-            Text("Lesson Title: \(model.modules[moduleId].content.lessons[lessonId].title)")
+            Text("Lesson \(lessonId + 1): \(model.modules[moduleId].content.lessons[lessonId].title)")
             
             if url != nil {
                 VideoPlayer(player: AVPlayer(url: url!))

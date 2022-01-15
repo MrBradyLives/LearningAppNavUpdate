@@ -120,7 +120,7 @@
                 {
                     "id": 3,
                     "content": "<p>What is the type and value of str in the following expression?</p><div class='highlight-swift notranslate'><div class='code-sample'><div class='Swift highlight'><ol class='code-lines'><li><span class='k'>let</span> <span class='nv'>num</span> = <span class='m'>12.0</span></li><li><span class='k'>let</span> <span class='nv'>str</span> = <span class='nv'>String</span>(<span class='nv'>num</span>)</li></ol></div></div></div>",
-                    "correctIndex": 1,
+                    "correctIndex": 0,
                     "answers": [
                         "Type: String, Value: \"12.0\"",
                         "Type: String?, Value: \"12.0\"",

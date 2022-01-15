@@ -14,7 +14,7 @@ struct QuizResultsView: View {
     var numQuestions: Int
     
     var response:String {
-        let percentage = 100*Double(numCorrect)/Double(numQuestions)
+        let percentage = 100*numCorrect/numQuestions
         if percentage >= 90 {
             return "Excellent!"
         }
@@ -34,16 +34,30 @@ struct QuizResultsView: View {
 
         
         VStack {
-            Text("Results")
+            Text("Quiz Results")
+            
+            Spacer()
+            
             Text(response)
-            Text("You scored \(numCorrect) out of \(numQuestions)")
+                .font(.largeTitle)
+                .padding()
+            Text("You scored \(100*numCorrect/numQuestions)%")
+            Text("That's \(numCorrect) out of \(numQuestions) correct")
+            
+            Spacer()
             
             Button {
                 model.moduleSelector = nil
             } label: {
-                Text("Complete")
+                ZStack {
+                    RectangleView(color: .blue, height: 60)
+                    Text("Complete - Return to Home")
+                        .foregroundColor(.white)
+                }
+   
             }
         }
+        .padding()
     }
 }
 
