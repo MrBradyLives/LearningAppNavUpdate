@@ -28,14 +28,9 @@ struct QuizResultsView: View {
             return "Time to get to work!"
         }
     }
-    
-    var body: some View {
-        
 
-        
+    var body: some View {
         VStack {
-            Text("Quiz Results")
-            
             Spacer()
             
             Text(response)
@@ -58,6 +53,8 @@ struct QuizResultsView: View {
             }
         }
         .padding()
+        .navigationTitle("Quiz Results")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

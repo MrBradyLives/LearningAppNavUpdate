@@ -22,8 +22,10 @@ struct ContentDetailView: View {
         
         let htmlTextString =  model.addCodeStyling(model.modules[moduleId].content.lessons[lessonId].explanation)
 
-        VStack {
-            Text("Lesson \(lessonId + 1): \(model.modules[moduleId].content.lessons[lessonId].title)")
+        VStack(alignment: .leading) {
+                Text(model.modules[moduleId].content.lessons[lessonId].title)
+                .font(.title2)
+                .fontWeight(.semibold)
             
             if url != nil {
                 VideoPlayer(player: AVPlayer(url: url!))
@@ -46,14 +48,14 @@ struct ContentDetailView: View {
             } label: {
                 if lessonId == model.modules[moduleId].content.lessons.count-1 {
                     ZStack {
-                        RectangleView(color: .red, height: 50)
+                        RectangleView(color: Color(.systemPink), height: 50)
                         Text("Complete - Return Home")
                             .foregroundColor(.white)
                     }
                 }
                 else {
                     ZStack {
-                        RectangleView(color: .green, height: 50)
+                        RectangleView(color: Color(.systemBlue), height: 50)
                         Text("Next Lesson - \(model.modules[moduleId].content.lessons[lessonId+1].title)")
                             .foregroundColor(.white)
                     }
@@ -61,6 +63,8 @@ struct ContentDetailView: View {
             }
         }
         .padding()
+        .navigationTitle("Lesson \(lessonId + 1)")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

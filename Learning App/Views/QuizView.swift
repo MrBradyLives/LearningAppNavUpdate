@@ -44,16 +44,16 @@ struct QuizView: View {
                                 // Grey when pressed
                                 if answerIsSubmitted == false {
                                     ZStack {
-                                        RectangleView(color: index == selectedAnswerIndex ? Color(.systemMint) : Color(.systemTeal), height: 60)
+                                        RectangleView(color: index == selectedAnswerIndex ? Color(.systemOrange) : Color(.systemCyan), height: 60)
                                         Text(model.modules[moduleId].test.questions[questionId].answers[index])
-                                            .foregroundColor(index == selectedAnswerIndex ? .white : .black)
+                                            .foregroundColor(.white)
                                     }
                                 }
                                 // Button green if correct red if incorrect plus green for correct
                                 else {
                                     if currentQueston.answers[index] == currentQueston.answers[currentQueston.correctIndex]  {
                                         ZStack {
-                                            RectangleView(color: .green, height: 60)
+                                            RectangleView(color: Color(.systemGreen), height: 60)
                                             Text(model.modules[moduleId].test.questions[questionId].answers[index])
                                                 .foregroundColor(.white)
                                         }
@@ -67,9 +67,9 @@ struct QuizView: View {
                                     }
                                     else {
                                         ZStack {
-                                            RectangleView(color: .white, height: 60)
+                                            RectangleView(color: Color(.systemCyan), height: 60)
                                             Text(model.modules[moduleId].test.questions[questionId].answers[index])
-                                                .foregroundColor(.black)
+                                                .foregroundColor(.white)
                                         }
                                     }
                                 }
@@ -112,14 +112,14 @@ struct QuizView: View {
                     }
                     else if questionId >= model.modules[moduleId].test.questions.count-1 {
                         ZStack {
-                            RectangleView(color: .red, height: 50)
+                            RectangleView(color: Color(.systemRed), height: 50)
                             Text("Complete - Show Results")
                                 .foregroundColor(.white)
                         }
                     }
                     else {
                         ZStack {
-                            RectangleView(color: .green, height: 50)
+                            RectangleView(color: Color(.systemIndigo), height: 50)
                             Text("Next Question")
                                 .foregroundColor(.white)
                         }
@@ -129,6 +129,8 @@ struct QuizView: View {
                 .padding(.top, 80)
             }
             .padding()
+            .navigationTitle("\(model.modules[moduleId].category) Quiz")
+            .navigationBarTitleDisplayMode(.inline)
         }
         else if showResuts == true {
             QuizResultsView(numCorrect: correctAnswers, numQuestions: model.modules[moduleId].test.questions.count)

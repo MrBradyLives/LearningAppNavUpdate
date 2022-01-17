@@ -27,6 +27,8 @@ struct ContentListView: View {
             }
             .foregroundColor(.black)
         }
+        .navigationTitle("\(model.modules[moduleId].category) Lessons")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
