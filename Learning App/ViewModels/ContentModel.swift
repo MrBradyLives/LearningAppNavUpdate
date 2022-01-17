@@ -23,7 +23,7 @@ class ContentModel: ObservableObject {
         getRemoteData()
     }
     
-    // MARK: - Code Styling and convert to AttributedString
+    // MARK: - Get Css Code Styling and Convert to AttributedString
     
     func addCodeStyling(_ htmlString: String) -> NSAttributedString {
         
