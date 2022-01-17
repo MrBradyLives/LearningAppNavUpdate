@@ -41,10 +41,10 @@ struct QuizView: View {
                                 selectedAnswerIndex = index
                             } label: {
                                 
-                                // Button grey when pressed
+                                // Grey when pressed
                                 if answerIsSubmitted == false {
                                     ZStack {
-                                        RectangleView(color: index == selectedAnswerIndex ? .gray : .white, height: 60)
+                                        RectangleView(color: index == selectedAnswerIndex ? Color(.systemMint) : Color(.systemTeal), height: 60)
                                         Text(model.modules[moduleId].test.questions[questionId].answers[index])
                                             .foregroundColor(index == selectedAnswerIndex ? .white : .black)
                                     }

@@ -20,6 +20,7 @@ class ContentModel: ObservableObject {
     init() {
         self.modules = LocalDataService.getLocalData()
         self.styleData = LocalStyleDataService.getLocalStyleData()
+        RemoteDataService.getRemoteData()
     }
     
     // MARK: - Code Styling and convert to AttributedString
@@ -42,6 +43,34 @@ class ContentModel: ObservableObject {
             htmlCodeString = attributedString
         }
         return htmlCodeString
+    }
+    
+    // MARK: - Remote Data (Need to work out how to return from a dataTask to make separate service file)
+    func getRemoteData() {
+
+        let urlString = "https://raw.githubusercontent.com/MrBradyLives/LearningAppData/main/data2.json"
+        let url = URL(string: urlString)
+        guard url != nil else {
+            return
+        }
+
+        let request = URLRequest(url: url!)
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                return
+            }
+            do {
+                let remoteModuleData = try JSONDecoder().decode([Module].self, from: data!)
+                DispatchQueue.main.async {
+                    self.modules += remoteModuleData
+                }
+            }
+            catch {
+                print(error)
+            }
+        }
+        dataTask.resume()
     }
 }
 
