@@ -20,7 +20,7 @@ class ContentModel: ObservableObject {
     init() {
         self.modules = LocalDataService.getLocalData()
         self.styleData = LocalStyleDataService.getLocalStyleData()
-        getRemoteData()
+        getRemoteJSON()
     }
     
     // MARK: - Get Css Code Styling and Convert to AttributedString
@@ -46,31 +46,19 @@ class ContentModel: ObservableObject {
     }
     
     // MARK: - Remote Data
-    func getRemoteData() {
-
+    
+    func getRemoteJSON() {
         let urlString = "https://raw.githubusercontent.com/MrBradyLives/LearningAppData/main/data2.json"
-        let url = URL(string: urlString)
-        guard url != nil else {
-            return
-        }
-
-        let request = URLRequest(url: url!)
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
-            guard error == nil else {
-                return
-            }
-            do {
-                let remoteModuleData = try JSONDecoder().decode([Module].self, from: data!)
-                DispatchQueue.main.async {
-                    self.modules += remoteModuleData
-                }
-            }
-            catch {
+        
+        let remoteService = RemoteDataService(urlString: urlString)
+        remoteService.getRemoteJSON { (result: Result<[Module], RemoteDataServiceError>) in
+            switch result {
+            case .success(let modules):
+                self.modules += modules
+            case .failure(let error):
                 print(error)
             }
         }
-        dataTask.resume()
     }
 }
 

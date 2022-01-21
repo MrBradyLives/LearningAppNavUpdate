@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED50A44A278F6E6B0098ECC9 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50A449278F6E6B0098ECC9 /* RectangleView.swift */; };
+		ED7382FC279AE50B0031E476 /* RemoteDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7382FB279AE50B0031E476 /* RemoteDataService.swift */; };
 		ED7BEF802785BA000054190C /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF7F2785BA000054190C /* LearningApp.swift */; };
 		ED7BEF822785BA000054190C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BEF812785BA000054190C /* HomeView.swift */; };
 		ED7BEF842785BA010054190C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED7BEF832785BA010054190C /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		ED50A449278F6E6B0098ECC9 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		ED7382FB279AE50B0031E476 /* RemoteDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataService.swift; sourceTree = "<group>"; };
 		ED7BEF7C2785BA000054190C /* Learning App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7BEF7F2785BA000054190C /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		ED7BEF812785BA000054190C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				ED7BEF9B2785E7270054190C /* LocalDataService.swift */,
 				ED7BEF9D2786373C0054190C /* LocalStyleDataService.swift */,
+				ED7382FB279AE50B0031E476 /* RemoteDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				ED7BEF9C2785E7270054190C /* LocalDataService.swift in Sources */,
 				EDAE7752278EE73100AF5B3B /* ContentDetailView.swift in Sources */,
 				ED7BEF9E2786373C0054190C /* LocalStyleDataService.swift in Sources */,
+				ED7382FC279AE50B0031E476 /* RemoteDataService.swift in Sources */,
 				ED7BEF822785BA000054190C /* HomeView.swift in Sources */,
 				ED7BEF802785BA000054190C /* LearningApp.swift in Sources */,
 				EDFCAED8278DC60200BC3686 /* Constants.swift in Sources */,
